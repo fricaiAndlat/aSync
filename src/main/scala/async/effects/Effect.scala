@@ -5,12 +5,15 @@ import spire.implicits._
 
 /**
   * An effect represents a single connected effect within a show.
-  * @param fixtures The Fixtres that participate in this effect.
   */
-abstract class Effect(fixtures: Seq[Fixture]) {
-  def onFrame() {
-    fixtures.par.foreach(fixture => onFrame(fixture))
-  }
+abstract class Effect[T]{
 
-  def onFrame(fixture: Fixture)
+  def onFrame(t: Long, x: Float, y: Float, z: Float): T
+
+  def onPulse
+
+  def onKick
+
+
+
 }
