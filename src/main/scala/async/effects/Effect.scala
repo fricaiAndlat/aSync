@@ -10,9 +10,10 @@ abstract class Effect[T]{
 
   def onFrame(t: Long, x: Float, y: Float, z: Float): T
 
-  def onPulse
+  def onPulse: Unit = {}
 
-  def onKick
+  def onBeat: Unit = {}
+
 
 
 
